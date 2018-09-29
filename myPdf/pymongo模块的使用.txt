@@ -1,0 +1,8 @@
+安装：pip  install pymongo（在哪里写代码安在哪里）
+
+
+
+
+
+
+
