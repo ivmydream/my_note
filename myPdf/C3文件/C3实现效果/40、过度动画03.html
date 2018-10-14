@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过度动画</title>
+
+    <style>
+
+        #box{
+            width: 100px;
+
+            height: 100px;
+
+            background-color: pink;
+
+            /*transition 过度动画 两个比写参数 第一个为动画要改变的属性 第二个为 动画执行的时间 */
+
+            /*过度动画默认不会执行 必须动画的属性 发生改变的时候才会触发动画执行*/
+            /*all 代表改变所有属性*/
+            -webkit-transition: all 3s;
+            -moz-transition: all 3s;
+            -ms-transition: all 3s;
+            -o-transition: all 3s;
+            transition: all 3s;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div id="box">
+
+</div>
+
+<script>
+
+    var box = document.querySelector("#box");
+
+    box.onclick = function () {
+
+        this.style.width = "900px";
+
+        this.style.height = "500px";
+    }
+
+</script>
+
+
+</body>
+</html>

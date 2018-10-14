@@ -1,0 +1,7 @@
+- obj.onkeydown 按下键
+- obj.onkeyup  松开按键
+
+- 获取键值：event.keyCode
+	- altKey 是否按下alt键
+	- ctrlKey 是否按下control键
+	- shiftKey 是否按下shift键

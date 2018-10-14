@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style type="text/css">
+		*{
+			padding:0;
+			margin:0;
+		}
+		#tc{
+			height:200px;
+			width:200px;
+			margin:400px;
+			background-color: red;
+			animation:item 4s;
+		}
+		#container{
+			perspective: 500px;
+		}
+		@keyframes item{
+			100%{
+				transform :translateZ(200px);
+			}
+		}
+	</style>
+</head>
+<body>
+<div id="container">
+	<div id='tc'>donghua</div>
+</div>
+</body>
+</html>

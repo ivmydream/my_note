@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字换行</title>
+
+    <style>
+
+        #box{
+
+            width: 200px;
+            background-color: pink;
+
+            /*强制换行 如果 当前行放不下这个单词 则整个单词换下一行显示 如果下一行还放不下这个单词 则将单词拆分显示*/
+            word-wrap: break-word;
+
+            /*break-all 允许在单词内换行 keep-all支持不好 safari 和 chrome 不支持 */
+
+            /* 直接在本行显示 不会整个单词换行 如果显示不下 则将单词拆分显示 */
+            word-break: keep-all;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="box">
+        sdgqwe we gq grq3 gq43gt 4sagewrg hgeerh trh 45h 5thj 45r
+        <!--你眉头开了-->
+        <!--你快乐所以我快乐(简谱)-->
+        <!--你快乐所以我快乐(简谱)-->
+        <!--所以我笑了-->
+        <!--你眼睛红了-->
+        <!--我的天灰了-->
+        <!--啊 天晓得既然说-->
+    </div>
+
+</body>
+</html>

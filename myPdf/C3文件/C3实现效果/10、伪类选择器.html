@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>伪类选择器</title>
+
+    <style>
+
+        /*在元素内容前面插入些内容*/
+        p:before{
+
+            /*必须*/
+            content: "*";
+        }
+
+        /*在元素内容后面插入些内容*/
+        p:after{
+
+            content: "(版权所有,盗版必究)";
+
+            color: red;
+
+        }
+    </style>
+
+</head>
+<body>
+
+    <p>你眼睛红了</p>
+    <p>我的天灰了</p>
+    <p>啊 天晓得既然说</p>
+    <p>天晓得既然说</p>
+    <p>你快乐于是我快乐</p>
+
+
+</body>
+</html>

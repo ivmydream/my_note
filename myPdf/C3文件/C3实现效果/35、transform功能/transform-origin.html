@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>指定变形基准点</title>
+<style>
+div{ width:100px; height:100px; background:pink; margin:50px;}
+div:nth-child(1),div:nth-child(2){ position:absolute;}
+div:nth-child(3),div:nth-child(4){ position:absolute; top:200px;}
+div:nth-child(2){ transform: rotate(45deg); background-color:yellow;}
+div:nth-child(4){ transform: rotate(45deg); transform-origin:left bottom;background-color:yellow;}
+
+</style>
+</head>
+
+<body>
+<div>示例文字1</div>
+<div>示例文字2</div>
+<div>示例文字3</div>
+<div>示例文字4</div>
+</body>
+</html>

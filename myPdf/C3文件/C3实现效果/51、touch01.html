@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>touch</title>
+
+    <style>
+
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+
+    </style>
+
+</head>
+<body>
+
+
+    <div id="box">
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+
+    <script>
+
+        var box = document.querySelector("#box");
+
+        var p1 = document.querySelector("#box p:nth-of-type(1)");
+
+        var p2 = document.querySelector("#box p:nth-of-type(2)");
+
+        var p3 = document.querySelector("#box p:nth-of-type(3)");
+        //touchstart 手指触摸屏幕的时候执行
+        //touchmove 手指在屏幕上移动的时候执行
+        //touchend  手指离开屏幕的时候执行
+        //touchcancel 事件被强制终止的时候执行 (来电话了 短信 按home)
+
+        //evevt 中重要的list
+
+        //touches 保存当前屏幕上的手指对象
+        //targetTouches 保存当前绑定元素上的手指对象
+        //changedTouch 保存状态改变的手指对象
+
+        //touch对象中的属性
+        // clientX clientY 相对于当前浏览器左上角的距离
+        // pageX pageY 相对于页面左上角的距离
+
+        //screenX screenY 相对于屏幕左上角的距离
+
+        //radiusX radiusY 当前手指触摸的范围
+
+        //target 当前触摸的元素
+
+        //identifier 当前触摸对象的id 用来辨别手指
+
+
+        //
+
+
+        box.addEventListener("touchstart",function (e) {
+
+//            box.innerHTML = "start";
+
+//            p1.innerHTML = "touches " + e.touches.length;
+//
+//            p2.innerHTML = "target " + e.targetTouches.length;
+//
+//            p3.innerHTML = "changed " + e.changedTouches.length;
+
+            console.log(e.touches[0]);
+//            console.log(e.targetTouches);
+//            console.log(e.changedTouches);
+
+        })
+
+        box.addEventListener("touchmove",function (e) {
+
+            p1.innerHTML = "touches " + e.touches.length;
+
+            p2.innerHTML = "target " + e.targetTouches.length;
+
+            p3.innerHTML = "changed " + e.changedTouches.length;
+
+        })
+
+        document.addEventListener("touchend",function (e) {
+
+            p1.innerHTML = "touches " + e.touches.length;
+
+            p2.innerHTML = "target " + e.targetTouches.length;
+
+            p3.innerHTML = "changed " + e.changedTouches.length;
+        })
+
+        box.addEventListener("touchcancel",function (e) {
+
+            box.innerHTML = "cancel";
+        })
+
+    </script>
+
+</body>
+</html>

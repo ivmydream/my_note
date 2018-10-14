@@ -1,0 +1,158 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>无标题文档</title>
+		<style id="css">
+			#wrap {
+				position: relative;
+				width: 200px;
+				height: 200px;
+				margin: 50px auto;
+				border-radius: 50%;
+				border: 2px solid #000;
+			}
+			
+			#wrap ul {
+				margin: 0;
+				padding: 0;
+				position: relative;
+				list-style: none;
+			}
+			
+			#wrap ul li {
+				/*left值是99因为要想在中间显示，left值要从其父盒子宽度的一半100开始，因为其本身有2px的宽度，
+	所以就退一像素也就是99px 刚好居中，下面定位的时分秒针同样如此，left要根据宽度而变*/
+				width: 2px;
+				height: 5px;
+				background: #000;
+				position: absolute;
+				left: 99px;
+				top: 0;
+				/*X轴center Y轴100 意思是从圆的中心点开始旋转（Y轴给100是因为盒子的高是200，相当于半径）*/
+				-webkit-transform-origin: center 100px;
+			}
+			/*钟表一圈是360度，一共12个小时 每个小时之间差360/12=30度，
+			 * 每个小时之间差有5个格，所以每个小格之间是30/5=6度
+			*/
+			/*#wrap ul li:nth-of-type(1){-webkit-transform:rotate(0)}
+              #wrap ul li:nth-of-type(2){-webkit-transform:rotate(6deg)}
+              #wrap ul li:nth-of-type(3){-webkit-transform:rotate(12deg)}
+              #wrap ul li:nth-of-type(4){-webkit-transform:rotate(18deg)}
+              #wrap ul li:nth-of-type(5){-webkit-transform:rotate(24deg)}
+              #wrap ul li:nth-of-type(6){-webkit-transform:rotate(30deg)}
+              #wrap ul li:nth-of-type(7){-webkit-transform:rotate(36deg)}
+              #wrap ul li:nth-of-type(8){-webkit-transform:rotate(42deg)}
+            */
+			/*奇数个时变长，用于表示显示小时的线*/
+			
+			#wrap ul li:nth-of-type(5n+1) {
+				height: 12px;
+			}
+			/*top给的值和height加起来是一半的盒子高度：100*/
+			
+			#hour {
+				position: absolute;
+				left: 97px;
+				top: 55px;
+				width: 6px;
+				height: 45px;
+				background: #000;
+				-webkit-transform-origin: bottom;
+			}
+			
+			#min {
+				position: absolute;
+				left: 98px;
+				top: 35px;
+				width: 4px;
+				height: 65px;
+				background: #999;
+				-webkit-transform-origin: bottom;
+			}
+			
+			#sec {
+				position: absolute;
+				left: 99px;
+				top: 20px;
+				width: 2px;
+				height: 80px;
+				background: red;
+				-webkit-transform-origin: bottom;
+			}
+			
+			#ico {
+				width: 20px;
+				height: 20px;
+				background: #000;
+				border-radius: 50%;
+				position: absolute;
+				left: 90px;
+				top: 90px;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="wrap">
+			<ul>
+				
+			</ul>
+			<div id="hour"></div>
+			<div id="min"></div>
+			<div id="sec"></div>
+			<div id="ico"></div>
+		</div>
+	</body>
+
+</html>
+<script>
+	var oUl = document.getElementsByTagName('ul')[0];
+	var oCss = document.getElementById('css');
+	var oH = document.getElementById('hour');
+	var oM = document.getElementById('min');
+	var oS = document.getElementById('sec');
+	var aLi = '';
+	var sCss = '';
+
+	for (var i = 0; i < 60; i++) {
+		//JS中计数是从0开始的，所以要i+1
+		sCss += '#wrap ul li:nth-of-type(' + (i + 1) + '){-webkit-transform:rotate(' + i * 6 + 'deg)}';
+		aLi += '<li></li>'
+	}
+	//放入html和css中
+	oUl.innerHTML = aLi;
+	oCss.innerHTML += sCss;
+
+	var timer = null;
+
+	//获取时间
+	function toTime() {
+		//每次执行前关闭并清除之前的定时器，节约性能
+		clearTimeout(timer);
+		timer = null;
+
+		//获取当前时间	
+		var oDate = new Date();
+		//得到此刻时间对应的时分秒
+		var iSec = oDate.getSeconds();
+		//console.log(iSec)
+		//但是如果当前时间是12点半，时针不应该是直直的指向12点，应该是在12和1之间，
+		//所以就需要把当前多出的分钟数/60换算成小时数加起来，下面在计算角度的时候也就可以对应上了。
+		//分针同样如此
+		var iMin = oDate.getMinutes() + iSec / 60;
+		var iHour = oDate.getHours() + iMin / 60;
+		//得到每一秒的旋转角度（每一秒是走6度）
+		oS.style.WebkitTransform = 'rotate(' + iSec * 6 + 'deg)';
+		//得到每一分钟走的角度 每一小时之间是30 / 一小时中间有5个格 =30/5=6度 
+		oM.style.WebkitTransform = 'rotate(' + iMin * 6 + 'deg)';
+		//每小时走360/12=30度
+		oH.style.WebkitTransform = 'rotate(' + iHour * 30 + 'deg)';
+
+		//开启定时器，每一秒自动走
+		timer = setTimeout(toTime, 1000);
+	}
+	//执行函数
+	toTime();
+</script>

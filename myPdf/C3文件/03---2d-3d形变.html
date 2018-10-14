@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2d - 3d 形变</title>
+
+    <style>
+
+        html,body,div,img{
+            margin: 0;
+            padding: 0;
+        }
+
+        .bg{
+            width: 300px;
+            height: 300px;
+            margin: 15px 0 0 15px;
+            background-image: url("img/bg.jpg");
+            /*background-repeat: no-repeat;*/
+            /*background-size: cover;*/
+            float: left;
+
+            /*-ms- ie 浏览器的前缀 -o- 欧朋浏览器 -moz- 火狐的 -webkit- 是指 chrome safar*/
+
+            /*透视距离 或 镜头距离 子元素起作用*/
+            -webkit-perspective: 1200px;
+            -moz-perspective: 1200px;
+            -o-perspective: 1200px;
+            -ms-perspective: 1200px;
+            perspective: 1200px;
+
+
+        }
+
+        .box{
+
+            width: 100%;
+            height: 100%;
+            position: relative;
+
+            /*让子元素处在3d空间内*/
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+
+
+        }
+
+        .box img{
+
+            width: 130px;
+            height: 200px;
+            position: absolute;
+            top: 50px;
+            left: 85px;
+            z-index: 10;
+
+        }
+
+        .box img:first-child{
+
+            opacity: 0.4;
+        }
+
+
+        .item1 img:last-child{
+
+            /*transform 形变属性 值为形变类型  rotate旋转 45deg旋转角度 */
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+            transform: rotate(45deg);
+        }
+
+        .item2 img:last-child{
+
+            /*沿着X轴方向旋转45度*/
+            -webkit-transform: rotateX(45deg);
+            -moz-transform: rotateX(45deg);
+            -ms-transform: rotateX(45deg);
+            -o-transform: rotateX(45deg);
+            transform: rotateX(45deg);
+        }
+
+        .item3 img:last-child{
+
+            -webkit-transform: rotateY(45deg);
+            -moz-transform: rotateY(45deg);
+            -ms-transform: rotateY(45deg);
+            -o-transform: rotateY(45deg);
+            transform: rotateY(45deg);
+        }
+
+        .item4 img:last-child{
+
+            -webkit-transform: rotateZ(45deg);
+            -moz-transform: rotateZ(45deg);
+            -ms-transform: rotateZ(45deg);
+            -o-transform: rotateZ(45deg);
+            transform: rotateZ(45deg);
+        }
+
+        .item5 img:last-child{
+
+            /*有四个值  前三个值中最大的值 最后一个角度分为多少份 其它两个代表占 多少份  第一个值代表x轴 选择角度 第二个代表y轴旋转角度 第三个代表z轴旋转角度*/
+            -webkit-transform: rotate3d(1,1,1,45deg);
+            -moz-transform: rotate3d(1,1,1,45deg);
+            -ms-transform: rotate3d(1,1,1,45deg);
+            -o-transform: rotate3d(1,1,1,45deg);
+            transform: rotate3d(1,1,1,45deg);
+        }
+
+        .item6 img:last-child{
+
+            /*translate 位移 两个值 第一个代表x轴位移大小 第二个代表 y 轴 位移大小*/
+            -webkit-transform: translate(30px,30px);
+            -moz-transform: translate(30px,30px);
+            -ms-transform: translate(30px,30px);
+            -o-transform: translate(30px,30px);
+            transform: translate(30px,30px);
+
+        }
+
+        .item7 img:last-child{
+
+            -webkit-transform: translateX(30px);
+            -moz-transform: translateX(30px);
+            -ms-transform: translateX(30px);
+            -o-transform: translateX(30px);
+            transform: translateX(30px);
+            
+        }
+
+        .item8 img:last-child{
+
+            -webkit-transform: translateY(30px);
+            -moz-transform: translateY(30px);
+            -ms-transform: translateY(30px);
+            -o-transform: translateY(30px);
+            transform: translateY(30px);
+
+        }
+
+        .item9 img:last-child{
+
+            -webkit-transform: translateZ(-300px);
+            -moz-transform: translateZ(-300px);
+            -ms-transform: translateZ(-300px);
+            -o-transform: translateZ(-300px);
+            transform: translateZ(-300px);
+
+        }
+
+        .item10 img:last-child{
+
+            /*x y z 轴偏移*/
+            -webkit-transform: translate3d(30px,30px,-300px);
+            -moz-transform: translate3d(30px,30px,-300px);
+            -ms-transform: translate3d(30px,30px,-300px);
+            -o-transform: translate3d(30px,30px,-300px);
+            transform: translate3d(30px,30px,-300px);
+
+        }
+
+        .item11 img:last-child{
+
+            /*扭曲*/
+            -webkit-transform: skew(30deg);
+            -moz-transform: skew(30deg);
+            -ms-transform: skew(30deg);
+            -o-transform: skew(30deg);
+            transform: skew(30deg);
+
+        }
+
+        .item12 img:last-child{
+
+            -webkit-transform: skewX(30deg);
+            -moz-transform: skewX(30deg);
+            -ms-transform: skewX(30deg);
+            -o-transform: skewX(30deg);
+            transform: skewX(30deg);
+
+        }
+
+        .item13 img:last-child{
+
+            -webkit-transform: skewY(30deg);
+            -moz-transform: skewY(30deg);
+            -ms-transform: skewY(30deg);
+            -o-transform: skewY(30deg);
+            transform: skewY(30deg);
+
+        }
+
+        .item14 img:last-child{
+
+            -webkit-transform: skew(30deg,30deg);
+            -moz-transform: skew(30deg,30deg);
+            -ms-transform: skew(30deg,30deg);
+            -o-transform: skew(30deg,30deg);
+            transform: skew(30deg,30deg);
+
+        }
+
+        .item15 img:last-child{
+
+            /* scale 表示缩放 两个参数 分别是 横向缩放的倍数 和 纵向缩放的倍数*/
+            -webkit-transform: scale(1.2,1.2);
+            -moz-transform: scale(1.2,1.2);
+            -ms-transform: scale(1.2,1.2);
+            -o-transform: scale(1.2,1.2);
+            transform: scale(1.2,1.2);
+
+            z-index: 0;
+
+        }
+
+        .item16 img:last-child{
+
+            -webkit-transform: scaleX(1.2);
+            -moz-transform: scaleX(1.2);
+            -ms-transform: scaleX(1.2);
+            -o-transform: scaleX(1.2);
+            transform: scaleX(1.2);
+
+            z-index: 0;
+
+        }
+
+        .item17 img:last-child{
+
+            -webkit-transform: scaleY(1.2);
+            -moz-transform: scaleY(1.2);
+            -ms-transform: scaleY(1.2);
+            -o-transform: scaleY(1.2);
+            transform: scaleY(1.2);
+
+            z-index: 0;
+
+        }
+
+        .item18 img:last-child{
+
+            -webkit-transform: scaleZ(5) rotateX(45deg);
+            -moz-transform: scaleZ(5) rotateX(45deg);
+            -ms-transform: scaleZ(5) rotateX(45deg);
+            -o-transform: scaleZ(5) rotateX(45deg);
+            transform: scaleZ(5) rotateX(45deg);
+
+            z-index: 0;
+
+        }
+
+        .item19 img:last-child{
+
+            -webkit-transform: scale3d(1.2,1.2,3) rotateX(45deg);
+            -moz-transform: scale3d(1.2,1.2,3) rotateX(45deg);
+            -ms-transform: scale3d(1.2,1.2,3) rotateX(45deg);
+            -o-transform: scale3d(1.2,1.2,3) rotateX(45deg);
+            transform: scale3d(1.2,1.2,3) rotateX(45deg);
+
+            z-index: 0;
+
+        }
+        
+    </style>
+
+
+</head>
+<body>
+
+    <div class="bg item1">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item2">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item3">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item4">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item5">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item6">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item7">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item8">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item9">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item10">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item11">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item12">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item13">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item14">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item15">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item16">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item17">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item18">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+    <div class="bg item19">
+        <div class="box">
+            <img src="img/cardKingClub.png" alt="">
+            <img src="img/cardKingClub.png" alt="">
+        </div>
+    </div>
+
+</body>
+</html>

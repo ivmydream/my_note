@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+
+    <style>
+
+
+        html,body{
+            height: 100%;
+        }
+
+        html{
+            background-color: #e74c3c;
+        }
+
+
+        #box{
+
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            position: relative;
+
+            /*-webkit-animation: run 2s linear infinite;*/
+            /*-o-animation: run 2s linear infinite;*/
+            /*animation: run 2s linear infinite;*/
+
+        }
+
+        #box:before{
+
+            content: "";
+            display: block;
+            width: 80px;
+            height: 6px;
+            background-color: #fff;
+            border-radius: 3px;
+            position: absolute;
+            top: 50%;
+            /*left: 50%;*/
+            margin-left: 24px;
+            margin-top: -3px;
+
+            animation: run 2s linear infinite;
+
+            /*改变旋转中心点的位置*/
+            transform-origin: 76px 50%;
+
+        }
+
+        @keyframes run {
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+
+        }
+
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="box"></div>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>重复渐变</title>
+
+    <style>
+
+        html,body,div{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+
+            width: 200px;
+            height: 200px;
+            border: 1px solid orange;
+            margin: 100px auto;
+        }
+
+        #box{
+
+            /*线性重复渐变*/
+            background: repeating-linear-gradient(red 30px, black 10px);
+        }
+
+        #box1{
+            /*径向重复渐变*/
+            background: repeating-radial-gradient(red 20px, black 30px);
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="box">
+
+
+    </div>
+
+    <div id="box1">
+
+
+    </div>
+
+</body>
+</html>

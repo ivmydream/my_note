@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>touch</title>
+    <style>
+
+        html,body,div{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="box"></div>
+
+    <script src="touch.js"></script>
+    <script>
+
+        var box = document.querySelector("#box");
+
+        //touchstart touchmove touchend touchcancel
+
+        //tap doubleTap swiperLeft swiperRight swiperTop swiperBottom ......
+
+//        console.log(box);
+//
+//        box.addEventListener("touchstart",function (e) {
+//
+//        })
+//
+        box.addEventListener("tap",function (e) {
+
+            console.log("tap");
+
+        })
+
+
+        box.addEventListener("doubleTap",function (e) {
+
+
+            console.log("double");
+        })
+
+        box.addEventListener("swiperLeft",left);
+
+        function left(e) {
+
+
+            console.log("swiperLeft");
+        }
+
+        box.removeEventListener("swiperLeft",left);
+
+
+    </script>
+
+
+</body>
+</html>

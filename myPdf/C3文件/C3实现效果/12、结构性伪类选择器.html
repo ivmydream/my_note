@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结构性伪类选择器</title>
+
+    <style>
+        /*root 选择页面的根元素*/
+        :root{
+            background-color: pink;
+        }
+        p{
+            height: 30px;
+            background-color: orange;
+        }
+        /*not 排除某个或者某类元素*/
+        /* not(被排除的元素的选择器)  */
+        p:not(.item3){
+            background-color: purple;
+        }
+        /*指定的前面选择器所选的元素内容为空则生效*/
+        div:empty{
+            height: 100px;
+            background-color: red;
+        }
+    </style>
+
+
+</head>
+<body>
+
+
+    <p class="item1"></p>
+    <p class="item2"></p>
+    <p class="item3"></p>
+    <p class="item4"></p>
+    <p class="item5"></p>
+
+    <div>xxxx</div>
+    <div></div>
+
+
+</body>
+</html>

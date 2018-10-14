@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background-size</title>
+
+    <style>
+
+        html,body,div{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box{
+
+            width: 200px;
+            height: 300px;
+            border: 20px solid pink;
+            margin: 100px auto;
+            background-color: orange;
+            background-image: url("img/detail.jpg");
+            background-repeat: no-repeat;
+
+            /*设置背景图片大小 可以是固定数值 也可以是百分比 */
+            /*cover 等比拉伸图片 直到最长的边铺满为止 短的边背景图片可能会溢出*/
+            /*contain 等比拉伸图片 直到短的边铺满为止 长的边可能会铺不满*/
+            background-size: contain;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="box">
+
+
+
+    </div>
+
+</body>
+</html>

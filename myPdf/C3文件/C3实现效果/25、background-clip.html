@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background-clip</title>
+
+    <style>
+
+        html,body,div{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box{
+
+            width: 200px;
+            height: 300px;
+            border: 20px dashed pink;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: orange;
+            background-image: url("img/detail.jpg");
+            background-repeat: no-repeat;
+            background-origin: border-box;
+
+            /*定义背景的绘制区域 border-box(默认) 从border起始位置开始绘制背景 padding-box 从padding起始位置开始绘制背景 content-box 内容起始位置开始绘制背景*/
+            background-clip: content-box;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+<div id="box">
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>通用兄弟选择器</title>
+
+    <style>
+
+        p{
+            height: 30px;
+            background-color: gray;
+        }
+
+        /* + 代表 当前元素下一个元素的样式*/
+        .item1 + p{
+            background-color: pink;
+        }
+
+        /* ~ 当前元素下所有p 元素的样式*/
+        .item3 ~ p{
+            background-color: brown;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="box">
+        <p class="item1"></p>
+        <p class="item2"></p>
+        <p class="item3"></p>
+        <p class="item4"></p>
+        <p class="item5"></p>
+    </div>
+
+</body>
+</html>

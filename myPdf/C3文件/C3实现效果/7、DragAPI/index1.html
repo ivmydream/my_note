@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			div{
+				border: 1px solid black;
+				width: 800px;
+				height: 400px;
+			}
+		</style>
+		<script type="text/javascript">
+		    window.onload = function(){
+		    	  //得到拖动元素
+		    	  var dragImg = document.getElementById("dragImg");
+		    	  //得到目标元素
+		    	  var targetDiv = document.getElementById("targetDiv");
+		    	  var dragImgDiv = document.getElementById("dragImgDiv");
+		    	  //设置你想拖放的内容
+		    	  dragImg.ondragstart = function(e){
+		    	  	var data = e.dataTransfer;
+		    	  	data.setData("text/plain",this.id);
+		    	  }
+		    	  //设置目标元素允许接受拖放元素
+		    	  targetDiv.ondragover = function(e){
+		    	  	e.preventDefault();
+		    	  }
+		    	  //取出你拖放的内容
+		    	  targetDiv.ondrop = function(e){
+		    	  	var data = e.dataTransfer;
+		    	  	var text = data.getData("text/plain");
+		    	  	e.target.appendChild(document.getElementById(text));
+		    	  }
+		    	  //设置你想拖放的内容
+		    	  dragImg.ondragstart = function(e){
+		    	  	var data = e.dataTransfer;
+		    	  	data.setData("text/plain",this.id);
+		    	  }
+		    	  //设置目标元素允许接受拖放元素
+		    	  dragImgDiv.ondragover = function(e){
+		    	  	e.preventDefault();
+		    	  }
+		    	  //取出你拖放的内容
+		    	  dragImgDiv.ondrop = function(e){
+		    	  	var data = e.dataTransfer;
+		    	  	var text = data.getData("text/plain");
+		    	  	e.target.appendChild(document.getElementById(text));
+		    	  }
+		    }
+		</script>
+	</head>
+	<body>
+		<!--拖动元素-->
+		<div id="dragImgDiv" draggable="true">
+			<img src="img/1.jpg" id="dragImg"/>
+		</div>
+		<!--目标元素-->
+		<div id="targetDiv">
+		</div>
+	</body>
+</html>

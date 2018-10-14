@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>结构性伪类选择器</title>
+
+    <style>
+        p{
+            height: 30px;
+            background-color: gray;
+        }
+        /*在其父元素下找第一个子元素 但是第一个子元素必须为指定类型才生效*/
+        p:first-child{
+            background-color: purple;
+        }
+        /*在其父元素下 找最后一个子元素 但其类型必须为指定类型才生效*/
+        p:last-child{
+            background-color: pink;
+        }
+        /*在其父元素下 寻找指定位置的元素 但其类型必须为指定类型才生效*/
+        p:nth-child(3){
+            background-color: orange;
+        }
+        /*在其父元素下 找倒数指定位置的元素 但其类型必须为指定类型才生效*/
+        p:nth-last-child(2){
+            background-color: blue;
+        }
+        #box1{
+            margin-top: 100px;
+        }
+        #box1 p{
+            background-color: gray;
+        }
+        /*在其父元素下 找第一个指定的元素*/
+        #box1 p:first-of-type{
+            background-color: red;
+        }
+        /*在其父元素下 找最后一个指定的元素*/
+        #box1 p:last-of-type{
+            background-color: pink;
+        }
+        /*在其父元素下 找指定元素的第n个*/
+        #box1 p:nth-of-type(3){
+            background-color: brown;
+        }
+        /*在其父元素下 找指定元素的倒数第n个*/
+        #box1 p:nth-last-of-type(2){
+            background-color: black;
+        }
+        #box2{
+            margin-top: 100px;
+        }
+        #box2 p{
+            background-color: gray;
+        }
+        /*在其父元素下 有且仅有一个元素并且 为指定元素的情况下才会生效*/
+        #box2 p:only-child{
+            background-color: green;
+        }
+        #box3{
+            margin-top: 100px;
+        }
+        #box3 p{
+            background-color: gray;
+        }
+        /*odd 代表奇数*/
+        #box3 p:nth-of-type(odd){
+            background-color: pink;
+        }
+        /*even 代表偶数*/
+        #box3 p:nth-of-type(even){
+            background-color: rebeccapurple;
+        }
+
+    </style>
+
+</head>
+<body>
+    <div id="box">
+        <span></span>
+        <p class="item1"></p>
+        <p class="item2"></p>
+        <p class="item3"></p>
+        <p class="item4"></p>
+        <p class="item5"></p>
+    </div>
+
+    <div id="box1">
+        <span></span>
+        <p class="item1"></p>
+        <p class="item2"></p>
+        <p class="item3"></p>
+        <p class="item4"></p>
+        <p class="item5"></p>
+
+    </div>
+
+    <div id="box2">
+        <p></p>
+        <!--<span></span>-->
+    </div>
+
+    <div id="box3">
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+    </div>
+
+</body>
+</html>

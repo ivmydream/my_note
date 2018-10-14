@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>UI状态选择器</title>
+
+    <style>
+        #box{
+            width: 100px;
+            height: 100px;
+            background-color: gray;
+        }
+
+        #box:hover{
+            background-color: pink;
+        }
+
+        #box:active{
+            background-color: black;
+        }
+
+
+        /*当输入框获取焦点的时候应用此样式*/
+        #box2 input:focus{
+            border: 1px solid green;
+            outline: none;
+        }
+
+        /*禁用状态下的样式*/
+        #box3 input:disabled{
+            background-color: gray;
+        }
+
+        /*起用状态下的样式*/
+        #box3 input:enabled{
+            background-color: green;
+        }
+
+        /*在输入框为只读状态下的样式*/
+        #box4 input:read-only{
+            background-color: pink;
+        }
+
+        /*输入框为可读可写状态下的样式*/
+        #box4 input:read-write{
+            background-color: orange;
+        }
+
+        /*checked 表示选中状态下checkbox 的样式*/
+        #box5 input:checked + label{
+            color: red;
+        }
+
+        /*checkbox 半选择状态下的样式*/
+        #box6 input:indeterminate + label{
+            color: brown;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="box">
+
+    </div>
+
+    <div id="box2">
+        <input type="text">
+    </div>
+
+    <div id="box3">
+        <input type="text" disabled = "disabled">
+        <input type="text">
+    </div>
+
+    <div id="box4">
+        <input type="text" readonly = "readonly">
+        <input type="text">
+    </div>
+
+    <div id="box5">
+        <input type="checkbox">
+        <label>男</label>
+        <input type="checkbox">
+        <label>女</label>
+        <input type="checkbox">
+        <label>女博士</label>
+    </div>
+    <div id="box6">
+        <input type="checkbox">
+        <label>女博士</label>
+    </div>
+    <script>
+        var checkBox = document.querySelector("#box6>input");
+        //半选择状态 只能用js来设置
+        checkBox.indeterminate = true;
+    </script>
+
+</body>
+</html>

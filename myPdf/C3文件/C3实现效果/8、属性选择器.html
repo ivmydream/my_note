@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>属性选择器</title>
+
+    <style>
+
+        html,body{
+            margin: 0;
+            padding: 0;
+        }
+        /* *= 表示 属性里需要包含等号后面的值才能匹配 */
+        p[class *= "t"]{
+            height: 30px;
+            background-color: pink;
+        }
+        /* ^= 表示 属性里需要以等号后面的值开头才能匹配 */
+        p[class ^= "m"]{
+            background-color: purple;
+        }
+        /* $= 表示 属性里需要以等号后面的值结尾才能匹配 */
+        p[class $= "9"]{
+            background-color: red;
+        }
+    </style>
+
+</head>
+<body>
+
+    <p class="item1"></p>
+    <p class="item2"></p>
+    <p class="item3"></p>
+    <p class="mitem4"></p>
+    <p class="item5"></p>
+    <p class="item6"></p>
+    <p class="item7"></p>
+    <p class="item8"></p>
+    <p class="item9"></p>
+    <p class="item10"></p>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"   content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"/>
+    <title>touch</title>
+
+    <style>
+
+        html,body,div{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box{
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: pink;
+            display: none;
+            position: absolute;
+        }
+
+        .show{
+            display: block !important;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <div id="box">
+
+    </div>
+
+    <script>
+
+        var box = document.querySelector("#box");
+
+        document.addEventListener("touchstart",function (e) {
+
+            // box.className = "show";
+            box.style.display = 'block';
+
+            var touch = e.changedTouches[0];
+
+            box.style.left = touch.pageX - box.offsetWidth / 2 + "px";
+
+            box.style.top = touch.pageY -  box.offsetHeight / 2 +"px";
+
+//            getComputedStyle(box).width
+//            box.currentStyle
+
+//            var getComputedStyle = getComputedStyle || function (ele) {
+//
+//                        return ele.currentStyle;
+//
+//                    }
+
+        })
+
+        document.addEventListener("touchmove",function (e) {
+
+            var touch = e.changedTouches[0];
+
+            box.style.left = touch.pageX - box.offsetWidth / 2 + "px";
+
+            box.style.top = touch.pageY -  box.offsetHeight / 2 +"px";
+
+        })
+
+        document.addEventListener("touchend",function (e) {
+
+            // box.className = "";
+            box.style.display = 'none';
+        })
+
+    </script>
+
+</body>
+</html>

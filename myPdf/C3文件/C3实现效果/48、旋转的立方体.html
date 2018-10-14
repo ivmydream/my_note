@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>旋转的立方体</title>
+
+    <style>
+
+        html,body,div{
+            margin: 0;
+            padding: 0;
+        }
+
+        #bg{
+
+            width: 500px;
+            height: 500px;
+            background-color: cornflowerblue;
+            margin: 100px auto;
+
+            -webkit-perspective: 1200px;
+            -moz-perspective: 1200px;
+            -o-perspective: 1200px;
+            -ms-perspective: 1200px;
+            perspective: 1200px;
+        }
+
+        #box{
+
+            width: 100%;
+            height: 100%;
+            -webkit-transform-style: preserve-3d;
+            -moz-transform-style: preserve-3d;
+            -ms-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+            position: relative;
+
+            -webkit-animation: run 3s linear infinite 2s;
+            -o-animation: run 3s linear infinite 2s;
+            animation: run 3s linear infinite 2s alternate;
+
+            -webkit-transform-origin: 50% 50% -150px;
+            -moz-transform-origin: 50% 50% -150px;
+            -ms-transform-origin: 50% 50% -150px;
+            -o-transform-origin: 50% 50% -150px;
+            transform-origin: 50% 50% -150px;
+        }
+
+
+        @keyframes run {
+
+            0%{
+                -webkit-transform: rotateY(0deg);
+                -moz-transform: rotateY(0deg);
+                -ms-transform: rotateY(0deg);
+                -o-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+            }
+
+            50%{
+
+                -webkit-transform: rotateY(270deg);
+                -moz-transform: rotateY(270deg);
+                -ms-transform: rotateY(270deg);
+                -o-transform: rotateY(270deg);
+                transform: rotateY(270deg);
+                
+            }
+            
+            100%{
+
+                -webkit-transform: rotateY(360deg);
+                -moz-transform: rotateY(360deg);
+                -ms-transform: rotateY(360deg);
+                -o-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+            }
+
+        }
+
+        @-webkit-keyframes run {
+
+            0%{
+                -webkit-transform: rotateY(0deg);
+                -moz-transform: rotateY(0deg);
+                -ms-transform: rotateY(0deg);
+                -o-transform: rotateY(0deg);
+                transform: rotateY(0deg);
+            }
+
+            50%{
+
+                -webkit-transform: rotateY(270deg);
+                -moz-transform: rotateY(270deg);
+                -ms-transform: rotateY(270deg);
+                -o-transform: rotateY(270deg);
+                transform: rotateY(270deg);
+
+            }
+
+            100%{
+
+                -webkit-transform: rotateY(360deg);
+                -moz-transform: rotateY(360deg);
+                -ms-transform: rotateY(360deg);
+                -o-transform: rotateY(360deg);
+                transform: rotateY(360deg);
+            }
+
+        }
+
+        #box div{
+
+            width: 300px;
+            height: 300px;
+            background-color: aquamarine;
+            opacity: 0.4;
+            position: absolute;
+            top: 100px;
+            left: 100px;
+            text-align: center;
+            line-height: 300px;
+            font-size: 50px;
+            font-weight: 900;
+            border: 1px solid black;
+
+        }
+
+        .page1{
+
+            -webkit-transform-origin: 0% 50%;
+            -moz-transform-origin: 0% 50%;
+            -ms-transform-origin: 0% 50%;
+            -o-transform-origin: 0% 50%;
+            transform-origin: 0% 50%;
+
+            -webkit-transform: rotateY(90deg);
+            -moz-transform: rotateY(90deg);
+            -ms-transform: rotateY(90deg);
+            -o-transform: rotateY(90deg);
+            transform: rotateY(90deg);
+            
+        }
+
+        .page2{
+
+            -webkit-transform-origin: 100% 50%;
+            -moz-transform-origin: 100% 50%;
+            -ms-transform-origin: 100% 50%;
+            -o-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+
+            -webkit-transform: rotateY(-90deg);
+            -moz-transform: rotateY(-90deg);
+            -ms-transform: rotateY(-90deg);
+            -o-transform: rotateY(-90deg);
+            transform: rotateY(-90deg);
+        }
+
+        .page3{
+
+            -webkit-transform-origin: 50% 0%;
+            -moz-transform-origin: 50% 0%;
+            -ms-transform-origin: 50% 0%;
+            -o-transform-origin: 50% 0%;
+            transform-origin: 50% 0%;
+
+            -webkit-transform: rotateX(-90deg);
+            -moz-transform: rotateX(-90deg);
+            -ms-transform: rotateX(-90deg);
+            -o-transform: rotateX(-90deg);
+            transform: rotateX(-90deg);
+        }
+
+        .page4{
+
+            -webkit-transform-origin: 50% 100%;
+            -moz-transform-origin: 50% 100%;
+            -ms-transform-origin: 50% 100%;
+            -o-transform-origin: 50% 100%;
+            transform-origin: 50% 100%;
+
+            -webkit-transform: rotateX(90deg);
+            -moz-transform: rotateX(90deg);
+            -ms-transform: rotateX(90deg);
+            -o-transform: rotateX(90deg);
+            transform: rotateX(90deg);
+        }
+        
+        .page6{
+
+            -webkit-transform: translateZ(-300px);
+            -moz-transform: translateZ(-300px);
+            -ms-transform: translateZ(-300px);
+            -o-transform: translateZ(-300px);
+            transform: translateZ(-300px);
+        }
+        
+    </style>
+
+</head>
+<body>
+
+    <div id="bg">
+
+        <div id="box">
+
+            <div class="page1">1</div>
+            <div class="page2">2</div>
+            <div class="page3">3</div>
+            <div class="page4">4</div>
+            <div class="page5">5</div>
+            <div class="page6">6</div>
+
+        </div>
+
+
+    </div>
+
+</body>
+</html>

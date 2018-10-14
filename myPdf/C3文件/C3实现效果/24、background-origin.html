@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>background-origin</title>
+
+    <style>
+
+        html,body,div{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box{
+
+            width: 200px;
+            height: 300px;
+            border: 20px dashed pink;
+            margin: 100px auto;
+            padding: 20px;
+            background-color: orange;
+            background-image: url("img/detail.jpg");
+            background-repeat: no-repeat;
+            /*background-size: contain;*/
+
+            /* 定义背景图片显示的位置 padding-box(默认) 以padding起始位置显示  border-box 以border 起始位置显示 content-box 以内容起始位置显示*/
+            background-origin: content-box;
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="box">
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>attr</title>
+
+    <style>
+
+        input:disabled{
+            background-color: gray;
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <!--autocomplete 如果设置到form上 form下的所有输入框都将开启自动提示-->
+    <form id="form01" action="" autocomplete = on>
+
+        <!--开启 输入框自动补全功能 必须设置name 属性-->
+        <input type="text" autocomplete = on name="user">
+        <!--自动获取焦点-->
+        <input type="text" name = "password" autofocus = "autofocus">
+        <!--required 属性表示 必须输入后才能提交-->
+        <input type="text" placeholder="请输入性别" required = "required">
+        <!--pattern 给输入框指定正则表达式-->
+        <input type="tel" pattern="\d+" placeholder="此输入框以限制只能输入数字">
+        <!--表示输入框被禁用-->
+        <input type="text" disabled = "disabled">
+        <!--readonly 表示这是一个只读输入框-->
+        <input type="text" readonly = "readonly" value="这是一个只读输入框">
+        <input type="submit" value="提交">
+    </form>
+
+    <!--form 属性指定了 此输入框 属于哪个form表单  input的form 属性必须 指定为所属的form表单的id值-->
+    <input type="text" form="form01" required = "required">
+
+</body>
+</html>

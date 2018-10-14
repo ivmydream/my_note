@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>input</title>
+
+    <style>
+
+        input{
+            margin-top: 30px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+    <form action="">
+        <!--type = "number" 表示这个输入框只能输入数字相关内容-->
+        number:<input type="number">
+        <br>
+        <!--type="range" 是个滑块控件  min 最小值 max 最大值 value 当前值 step每次滑动的步长-->
+        range:<input type="range" min="0" max="100" value="50" step="10">
+        <br>
+        <!--type="date" 会调出一个日历控件-->
+        date:<input type="date"> 
+        <input type="week"> 
+        <input type="month">
+        <input type="datetime-local">
+        <!--<input type="datetime">-->
+        <input type="time">
+        <br>
+        <!--type="color" 会调出颜色板进行颜色选择-->
+        color:<input type="color">
+        <br>
+        <!--表示搜索框 当输入内容之后会显示一个X表示删除输入内容-->
+        search:<input type="search">
+        <br>
+        <!--验证email 格式 在移动端会调用相应的快捷输入法-->
+        email:<input type="email">
+        <br>
+        <!--验证url格式-->
+        url:<input type="url">
+        <br>
+        <!--tel 表示电话号码输入框-->
+        tel:<input type="tel">
+        <input type="submit">
+    </form>
+
+
+
+</body>
+</html>

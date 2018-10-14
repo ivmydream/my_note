@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>过度动画</title>
+
+    <style>
+
+        #box{
+            width: 100px;
+
+            height: 100px;
+
+            background-color: pink;
+
+            /*transition 过度动画 两个比写参数 第一个为动画要改变的属性 第二个为 动画执行的时间 */
+
+            /*过度动画默认不会执行 必须动画的属性 发生改变的时候才会触发动画执行*/
+            /*all 代表改变所有属性*/
+
+            /*第三个值 为动画曲线函数 ease(默认) 先慢 在快 在慢*/
+
+            /*linear 代表匀速 */
+
+            /*ease-in 先慢后快*/
+
+            /*ease-out 先快后慢*/
+
+            /*ease-in-out 先慢 在快 在慢 比ease要明显一些*/
+
+            /*第四个参数为延时执行的时间*/
+            -webkit-transition: all 3s ease-in-out 2s;
+            -moz-transition: all 3s ease-in-out 2s;
+            -ms-transition: all 3s ease-in-out 2s;
+            -o-transition: all 3s ease-in-out 2s;
+            transition: all 3s ease-in-out 2s;
+        }
+
+        .move{
+
+            /*!important 把当前css属性的权重调至最高 比行内属性还高 没有js后设置的高*/
+            -webkit-transform: translate(900px,500px) !important;
+            -moz-transform: translate(900px,500px) !important;
+            -ms-transform: translate(900px,500px) !important;
+            -o-transform: translate(900px,500px) !important;
+            transform: translate(900px,500px) !important;
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+<div id="box">
+
+</div>
+
+<script>
+
+    var box = document.querySelector("#box");
+
+    box.onclick = function () {
+
+        this.className = "move";
+
+    }
+
+</script>
+
+
+</body>
+</html>

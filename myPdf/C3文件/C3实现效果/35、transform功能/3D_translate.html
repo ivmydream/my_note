@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>3D移动效果</title>
+<style>
+div{ width:300px; height:100px; background-color:yellow; text-align:center; transform: rotateY(60deg); }
+
+</style>
+</head>
+
+<body>
+<form>
+<div id="div">示例文字</div><BR/><BR/><BR/>
+<input type="button" value="在X轴上移动" onClick="translateX()"/>
+<input type="button" value="在Y轴上移动" onClick="translateY()"/>
+<input type="button" value="在Z轴上移动" onClick="translateZ()"/>
+</form>
+</body>
+
+<script>
+var n,tranINT,tranXINT,tranYINT,tranZINT;
+var divEle = document.getElementById("div");
+function translateX(){
+	n=0;
+	clearInterval();
+	tranXINT = setInterval("startXTrans()",10);	
+}
+function startXTrans(){
+	n = n+1;
+	divEle.style.transform = "translateX("+n+"px)";	
+	if(n==50){
+		clearInterval(tranXINT);
+		n = 0;
+	}
+}
+
+function translateY(){
+	n=0;
+	clearInterval();
+	tranYINT = setInterval("startYTrans()",10);	
+}
+function startYTrans(){
+	n = n+1;
+	divEle.style.transform = "translateY("+n+"px)";	
+	if(n==50){
+		clearInterval(tranYINT);
+		n = 0;
+	}
+}
+
+function translateZ(){
+	n=0;
+	clearInterval();
+	tranZINT = setInterval("startZTrans()",10);	
+}
+function startZTrans(){
+	n = n+1;
+	divEle.style.transform = "translateZ("+n+"px)";	
+	if(n==50){
+		clearInterval(tranZINT);
+		n = 0;
+	}
+}
+</script>
+</html>

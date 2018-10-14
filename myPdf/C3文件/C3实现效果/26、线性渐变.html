@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>线性渐变</title>
+
+    <style>
+
+        html,body,div{
+            margin: 0;
+            padding: 0;
+        }
+
+        div{
+
+            width: 200px;
+            height: 200px;
+            border: 1px solid orange;
+            margin: 100px auto;
+        }
+        
+        
+        #box{
+            
+            /*线性渐变 从红色渐变到黑色*/
+            background: linear-gradient(red,black);
+        }
+        
+        #box1{
+
+            /*多种颜色渐变*/
+            background: linear-gradient(red,black,blueviolet);
+        }
+
+        #box2{
+
+            /*多种颜色渐变 right left top bottom*/
+            background: linear-gradient(to right,red,black,blueviolet);
+        }
+
+        #box3{
+
+            /*多方向渐变*/
+            background: linear-gradient(to bottom right,red,black,blueviolet);
+        }
+
+        #box4{
+
+            /*角度渐变 deg 代表角度*/
+            background: linear-gradient(60deg,red,black,blueviolet);
+        }
+
+    </style>
+
+
+</head>
+<body>
+
+    <div id="box">
+
+    </div>
+
+    <div id="box1">
+
+    </div>
+
+    <div id="box2">
+
+    </div>
+
+    <div id="box3">
+
+    </div>
+
+    <div id="box4">
+
+    </div>
+
+
+</body>
+</html>

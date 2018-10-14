@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>flex</title>
+    <style>
+
+        html,body,div{
+            margin: 0;
+            padding: 0;
+        }
+
+        #box{
+
+            width: 400px;
+            height: 200px;
+            background-color: pink;
+            margin: 100px auto;
+            box-shadow: 3px 3px 10px 2px gray;
+            display: flex;
+            /*flex-direction: column;*/
+            /*justify-content: space-between;*/
+            /*align-items: center;*/
+            /*overflow: hidden;*/
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+
+        #box div{
+
+            width: 100px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            /*float: left;*/
+        }
+
+        .item1{
+            background-color: #e74c3c;
+        }
+
+        .item2{
+            background-color: deeppink;
+        }
+
+        .item3{
+            background-color: blueviolet;
+        }
+    </style>
+
+
+</head>
+<body>
+
+    <div id="box">
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+        <div class="item1">1</div>
+        <div class="item2">2</div>
+        <div class="item3">3</div>
+    </div>
+
+
+</body>
+</html>

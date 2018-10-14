@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>多重变形</title>
+<style>
+/*先水平移动向右150px,垂直向下移动200px,顺时针旋转45度，放大1.5倍*/
+div:first-child{ width:300px; background-color:yellow; text-align:center; transform:translate(150px,200px) rotate(45deg) scale(1.5); }
+/*顺时针旋转45度，放大1.5倍,先水平移动向右150px,垂直向下移动200px*/
+div:last-child{ width:300px; background-color:yellow; text-align:center; transform:rotate(45deg) scale(1.5) translate(150px,200px); }
+
+</style>
+</head>
+
+<body>
+<div>测试文字</div>
+<div>测试文字</div>
+</body>
+</html>

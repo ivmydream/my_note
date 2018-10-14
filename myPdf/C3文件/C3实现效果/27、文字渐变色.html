@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>文字渐变色</title>
+
+    <style>
+
+        #box{
+
+            font-size: 50px;
+            font-weight: 900;
+
+            /*-webkit-text-stroke: 1px red;*/
+            
+            background: linear-gradient(red,green,blue);
+
+
+            /*只支持 safari chrome*/
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+        }
+
+    </style>
+
+</head>
+<body>
+
+<div id="box">
+    sunck is a good man
+</div>
+
+</body>
+</html>

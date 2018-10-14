@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        div{
+            height: 40px;
+            font-size: 30px;
+        }
+        p{
+            border: 5px solid blue;
+        }
+        .stop{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            gDiv = document.getElementsByTagName("div")[0];
+            //到窗口顶部的距离
+            distance = gDiv.offsetTop;
+            window.onscroll = function () {
+                //滚动距离
+                lens = document.body.scrollTop || document.documentElement.scrollTop;
+                if (lens >= distance) {
+                    gDiv.className = "stop";
+                } else {
+                    gDiv.className = "";
+                }
+            }
+        }
+
+
+    </script>
+</head>
+<body style="height: 2000px">
+    <p>--------</p>
+    <p>--------</p>
+    <p>--------</p>
+    <p>--------</p>
+    <p>--------</p><p>--------</p>
+    <p>--------</p><p>--------</p>
+    <p>--------</p>
+    <div>
+        我要考试啦！！
+    </div>
+    <p>--------</p>
+    <p>--------</p>
+    <p>--------</p>
+    <p>--------</p>
+    <p>--------</p><p>--------</p>
+    <p>--------</p>
+    <p>--------</p>
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>animation</title>
+
+    <style>
+
+        html,body{
+            height: 100%;
+        }
+
+        html{
+            background-color: #e74c3c;
+        }
+
+
+        #box{
+
+            width: 200px;
+            height: 200px;
+            margin: 100px auto;
+            border-radius: 50%;
+            border: 2px solid #fff;
+            position: relative;
+
+            animation: run 2s linear infinite;
+
+        }
+
+        #box:before{
+
+            content: "";
+            display: block;
+            width: 20px;
+            height: 20px;
+            background-color: #fff;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            margin-left: -10px;
+            margin-top: -10px;
+
+        }
+
+        @keyframes run {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+
+        }
+
+        
+
+    </style>
+
+
+
+</head>
+<body>
+
+    <div id="box">
+
+
+
+
+    </div>
+
+</body>
+</html>

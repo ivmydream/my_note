@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .header{
+            height: 50px;
+        }
+        .content>div{
+            height: 200px;
+            width: 300px;
+            display: none;
+        }
+        .header .activate{
+            background-color: darkorchid;
+        }
+        .content .current{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <input type="button" value="变" class="activate">
+        <input type="button" value="变">
+        <input type="button" value="变">
+    </div>
+    <div class="content">
+        <div style="background-color: red" class="current"></div>
+        <div style="background-color: black"></div>
+        <div style="background-color: orange"></div>
+
+    </div>
+</body>
+<script>
+    gHeader = document.getElementsByClassName("header")[0];
+    gContent = document.getElementsByClassName("content")[0];
+
+    gButton = gHeader.getElementsByTagName("input");
+    gDiv = gContent.getElementsByTagName("div");
+
+    /*//转化为数组
+    gButton = Array.prototype.slice.call(gButton, 0);*/
+
+    for (i=0; i<gButton.length; i++) {
+        /*//三个封闭空间保存i的值,index的值是不一样的
+        (function (index) {
+            gButton[index].onclick = function () {
+                //先将所有的按钮的className设置为空，再给当前按钮添加类名activate
+                for (j=0; j<gButton.length; j++) {
+                    gButton[j].className = "";
+                    gDiv[j].className = "";
+                }
+
+                //将当前添加按钮className
+                this.className = "activate";
+                gDiv[index].className = "current";
+        })(i)*/
+
+        //保存按钮的下标
+        gButton[i].index = i;
+        gButton[i].onclick = function () {
+            //先将所有的按钮的className设置为空，再给当前按钮添加类名activate
+            for (j=0; j<gButton.length; j++) {
+                gButton[j].className = "";
+                gDiv[j].className = "";
+            }
+
+            //将当前添加按钮className
+            this.className = "activate";
+            gDiv[this.index].className = "current";
+
+           /* temp = gButton.indexOf(this);
+            gDiv[temp].className = "current";*/
+
+        }
+    }
+</script>
+</html>
